@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="using:AnimeX.ViewModel"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:CompileBindings="True"
+        x:Class="AnimeX.View.MainWindowView"
+        Icon="/Assets/loading.png"
+        Title="AnimeX"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaTitleBarHeightHint="999"
+        FontFamily="Source Sans Pro"
+        WindowStartupLocation="CenterScreen"
+        x:DataType="viewModel:MainWindowViewModel">
+        <Design.DataContext>
+                <viewModel:MainWindowViewModel/>
+        </Design.DataContext>
+        <TransitioningContentControl Content="{Binding Content}" />
+</Window>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AnimeX/App.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/Assets/Icons.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/MainWindow.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/SplashScreen.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/CreateAnimeView.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/MainWindow.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/MainWindowView.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/SplashScreen.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/SplashScreenView.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/Views/CreateAnime.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/Views/CreateAnimeView.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/Views/MainWindow.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/Views/SplashScreen.axaml" value="AnimeX/AnimeX.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
