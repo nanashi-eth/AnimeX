@@ -566,6 +566,46 @@
           }
         }
       },
+      "Material.Avalonia/3.4.2": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.9"
+        },
+        "compile": {
+          "lib/netstandard2.0/Material.Avalonia.dll": {},
+          "lib/netstandard2.0/Material.Colors.dll": {},
+          "lib/netstandard2.0/Material.Ripple.dll": {},
+          "lib/netstandard2.0/Material.Styles.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Material.Avalonia.dll": {},
+          "lib/netstandard2.0/Material.Colors.dll": {},
+          "lib/netstandard2.0/Material.Ripple.dll": {},
+          "lib/netstandard2.0/Material.Styles.dll": {}
+        }
+      },
+      "Material.Icons/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Material.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Material.Icons.dll": {}
+        }
+      },
+      "Material.Icons.Avalonia/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0-rc1.1",
+          "Material.Icons": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Material.Icons.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Material.Icons.Avalonia.dll": {}
+        }
+      },
       "MicroCom.CodeGenerator.MSBuild/0.11.0": {
         "type": "package",
         "build": {
@@ -2356,6 +2396,53 @@
         "runtimes/win-arm64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
+      ]
+    },
+    "Material.Avalonia/3.4.2": {
+      "sha512": "nd/FW7bueY6M4gDLhZA0/EaIRiYNW0Dvl7jLd61BCnNOBjbuv75q5UATmSEQcPc6cLrozZFaUPJ6TEtJ2EIVRg==",
+      "type": "package",
+      "path": "material.avalonia/3.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FavIcon.png",
+        "README.md",
+        "lib/net8.0/Material.Avalonia.dll",
+        "lib/net8.0/Material.Colors.dll",
+        "lib/net8.0/Material.Ripple.dll",
+        "lib/net8.0/Material.Styles.dll",
+        "lib/netstandard2.0/Material.Avalonia.dll",
+        "lib/netstandard2.0/Material.Colors.dll",
+        "lib/netstandard2.0/Material.Ripple.dll",
+        "lib/netstandard2.0/Material.Styles.dll",
+        "material.avalonia.3.4.2.nupkg.sha512",
+        "material.avalonia.nuspec"
+      ]
+    },
+    "Material.Icons/2.1.0": {
+      "sha512": "oMMrh8mKnZwOKZJEI3hc4Y18+/FQDfXSMv21xbX4kq05gcvcD1M2zxrjgNQvygHhP4DTcFmDidqUJRmuPyV9Fg==",
+      "type": "package",
+      "path": "material.icons/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Material.Icons.dll",
+        "material.icons.2.1.0.nupkg.sha512",
+        "material.icons.nuspec"
+      ]
+    },
+    "Material.Icons.Avalonia/2.1.0": {
+      "sha512": "IEuKf8mrByuxvjsM9LPWs+Ic0JPViDwZS7q1FzpHpu3QCEKOIriDiMNI6GaAtUA3uzz9OfAbd5vSjTi6SVbJrQ==",
+      "type": "package",
+      "path": "material.icons.avalonia/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/Material.Icons.Avalonia.dll",
+        "material.icons.avalonia.2.1.0.nupkg.sha512",
+        "material.icons.avalonia.nuspec"
       ]
     },
     "MicroCom.CodeGenerator.MSBuild/0.11.0": {
@@ -5200,6 +5287,8 @@
       "AvaloniaMvc >= 1.0.1",
       "CommunityToolkit.Mvvm >= 8.2.2",
       "FluentAvaloniaUI >= 2.0.5",
+      "Material.Avalonia >= 3.4.2",
+      "Material.Icons.Avalonia >= 2.1.0",
       "ReactiveUI >= 19.5.41"
     ]
   },
@@ -5275,6 +5364,14 @@
           "FluentAvaloniaUI": {
             "target": "Package",
             "version": "[2.0.5, )"
+          },
+          "Material.Avalonia": {
+            "target": "Package",
+            "version": "[3.4.2, )"
+          },
+          "Material.Icons.Avalonia": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "ReactiveUI": {
             "target": "Package",

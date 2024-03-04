@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "l/j3WiZWhCr6h35yOw6ZdSgiYni4G299bjT8en5jKodsKnaNLAtWs5xXL6jiW8BxeM+VLRpEKq7JpxAioB3ZCw==",
+  "dgSpecHash": "hySympcUEOCvid8Ddu2MfoQo/TO8OtorOVfa3EhGGCJOI9vNG+tZwm/Ci8qmlCvtJFH7rgUCRXWaR3zqaZKZmg==",
   "success": true,
   "projectFilePath": "S:\\Documents\\Rider Projects\\AnimeX\\AnimeX\\AnimeX.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,9 @@
     "C:\\Users\\Jose\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0\\harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\7.3.0\\harfbuzzsharp.nativeassets.webassembly.7.3.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0\\harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\material.avalonia\\3.4.2\\material.avalonia.3.4.2.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\material.icons\\2.1.0\\material.icons.2.1.0.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\material.icons.avalonia\\2.1.0\\material.icons.avalonia.2.1.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microcom.codegenerator.msbuild\\0.11.0\\microcom.codegenerator.msbuild.0.11.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",

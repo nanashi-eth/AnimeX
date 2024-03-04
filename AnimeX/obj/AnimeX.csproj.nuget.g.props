@@ -15,8 +15,8 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)skiasharp.nativeassets.webassembly\2.88.6\buildTransitive\netstandard1.0\SkiaSharp.NativeAssets.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)skiasharp.nativeassets.webassembly\2.88.6\buildTransitive\netstandard1.0\SkiaSharp.NativeAssets.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)microcom.codegenerator.msbuild\0.11.0\buildTransitive\MicroCom.CodeGenerator.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)microcom.codegenerator.msbuild\0.11.0\buildTransitive\MicroCom.CodeGenerator.MSBuild.props')" />
-    <Import Project="$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\7.3.0\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\7.3.0\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)avalonia\11.0.9\buildTransitive\Avalonia.props" Condition="Exists('$(NuGetPackageRoot)avalonia\11.0.9\buildTransitive\Avalonia.props')" />
+    <Import Project="$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\7.3.0\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\7.3.0\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Jose\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>

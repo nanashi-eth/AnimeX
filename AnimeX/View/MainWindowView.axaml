@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="using:AnimeX.ViewModel"
+        xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400"
         x:CompileBindings="True"
         x:Class="AnimeX.View.MainWindowView"
@@ -19,5 +20,34 @@
         <Design.DataContext>
                 <viewModel:MainWindowViewModel/>
         </Design.DataContext>
-        <TransitioningContentControl Content="{Binding Content}" />
+    <Canvas>
+        <!-- TransitioningContentControl -->
+        <TransitioningContentControl Canvas.Left="0" Canvas.Top="0" Width="800" Height="550" Content="{Binding Content}" />
+        <Border Canvas.Left="310" Canvas.Bottom="20" Background="Plum" Opacity="0.2" ZIndex="-100" Width="180" CornerRadius="10" BorderBrush="White" BorderThickness="2" IsVisible="{Binding IsAppLoaded}">
+        <!-- Panel de botones flotantes en la parte inferior central -->
+        <StackPanel Orientation="Horizontal">
+            <StackPanel.Styles>
+                <Style Selector="Button">
+                    <Setter Property="Background" Value="Plum" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Opacity" Value="1.0" />
+                </Style>
+            </StackPanel.Styles>
+            <!-- Aquí puedes colocar tus botones flotantes -->
+            <Button Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <materialIcons:MaterialIcon Kind="PlusBold" Width="20" Height="20" Margin="0 0 5 0"/>
+                    <TextBlock Text="New" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="5">
+                <StackPanel Orientation="Horizontal" >
+                    <materialIcons:MaterialIcon Kind="ListBox" Width="20" Height="20" Margin="0 0 5 0"/>
+                    <TextBlock Text="Lista" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        </Border>
+        
+    </Canvas>
 </Window>

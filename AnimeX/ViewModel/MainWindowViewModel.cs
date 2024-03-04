@@ -13,6 +13,12 @@ namespace AnimeX.ViewModel
         private ReactiveObject _content;
         private readonly RegistroAnime _registroAnime;
         private AnimeDetailsViewModel _animeDetailsViewModel;
+        private bool _isAppLoaded;
+        public bool IsAppLoaded
+        {
+            get => _isAppLoaded;
+            set => this.RaiseAndSetIfChanged(ref _isAppLoaded, value);
+        }
 
         public ReactiveObject Content
         {
@@ -27,6 +33,8 @@ namespace AnimeX.ViewModel
             _createAnimeViewModel = new CreateAnimeViewModel(registroAnime: _registroAnime);
             _animeDetailsViewModel = new AnimeDetailsViewModel(_registroAnime);
             Content = _splashScreenViewModel;
+            // Inicialmente, la aplicación no está cargada
+            IsAppLoaded = false;
         }
 
         public async Task LoadContentAsync()
@@ -55,6 +63,8 @@ namespace AnimeX.ViewModel
                 await Task.Delay(2000);
                 // Después de que se haya cargado el contenido inicial, cambia al CreateAnimeViewModel
                 Content = _animeDetailsViewModel;
+                // Marca la aplicación como cargada
+                IsAppLoaded = true;
             }
             catch (Exception ex)
             {
