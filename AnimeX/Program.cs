@@ -1,5 +1,7 @@
 ﻿using Avalonia;
 using System;
+using Avalonia.ReactiveUI;
+
 
 namespace AnimeX;
 
@@ -17,5 +19,6 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-            .LogToTrace();
+            .LogToTrace()
+            .UseReactiveUI();
 }

@@ -7,6 +7,7 @@
         <entry key="AnimeX/Assets/Icons.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/MainWindow.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/SplashScreen.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/AnimeDetailsView.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/CreateAnimeView.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/MainWindow.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/MainWindowView.axaml" value="AnimeX/AnimeX.csproj" />

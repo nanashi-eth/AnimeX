@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "r4PYrUj3FgtsZeIVKsJq/Q3G+UCoJQWC9CeelcYKguUzg0u77zidA6EmOl1ab8CKFJ28GRd6+rNuSAk3LeVIow==",
+  "dgSpecHash": "l/j3WiZWhCr6h35yOw6ZdSgiYni4G299bjT8en5jKodsKnaNLAtWs5xXL6jiW8BxeM+VLRpEKq7JpxAioB3ZCw==",
   "success": true,
   "projectFilePath": "S:\\Documents\\Rider Projects\\AnimeX\\AnimeX\\AnimeX.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jose\\.nuget\\packages\\avalonia\\11.0.6\\avalonia.11.0.6.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\avalonia\\11.0.9\\avalonia.11.0.9.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.buildservices\\0.0.29\\avalonia.buildservices.0.0.29.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.controls.colorpicker\\11.0.6\\avalonia.controls.colorpicker.11.0.6.nupkg.sha512",
@@ -15,7 +15,8 @@
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.fonts.inter\\11.0.6\\avalonia.fonts.inter.11.0.6.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.freedesktop\\11.0.6\\avalonia.freedesktop.11.0.6.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.native\\11.0.6\\avalonia.native.11.0.6.nupkg.sha512",
-    "C:\\Users\\Jose\\.nuget\\packages\\avalonia.remote.protocol\\11.0.6\\avalonia.remote.protocol.11.0.6.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\avalonia.reactiveui\\11.0.9\\avalonia.reactiveui.11.0.9.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\avalonia.remote.protocol\\11.0.9\\avalonia.remote.protocol.11.0.9.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.skia\\11.0.6\\avalonia.skia.11.0.6.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.themes.fluent\\11.0.6\\avalonia.themes.fluent.11.0.6.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\avalonia.themes.simple\\11.0.6\\avalonia.themes.simple.11.0.6.nupkg.sha512",

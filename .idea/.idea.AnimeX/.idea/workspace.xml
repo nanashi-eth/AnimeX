@@ -7,11 +7,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0629eb32-7988-431a-b490-90216062df91" name="Changes" comment="" />
+    <list default="true" id="0629eb32-7988-431a-b490-90216062df91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AnimeX/Assets/Fonts/Poppins.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeX/ViewModel/AnimeDetailsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/avalonia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/AnimeX.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/AnimeX.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/Model/Anime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/Model/Anime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/Model/RegistroAnime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/Model/RegistroAnime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/View/CreateAnimeView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/View/CreateAnimeView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/View/CreateAnimeView.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/View/CreateAnimeView.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/View/SplashScreenView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/View/SplashScreenView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/ViewLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/ViewLocator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/ViewModel/CreateAnimeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/ViewModel/CreateAnimeViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/ViewModel/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/ViewModel/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/AnimeX.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/AnimeX.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/AnimeX.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/AnimeX.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/AnimeX.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/AnimeX.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Base.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Controls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Controls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.DesignerSupport.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.DesignerSupport.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Dialogs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Dialogs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Markup.Xaml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Markup.Xaml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Markup.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Markup.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Metal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Metal.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.MicroCom.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.MicroCom.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.OpenGL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.OpenGL.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Remote.Protocol.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.Remote.Protocol.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/bin/Debug/net7.0/Avalonia.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/Resources.Inputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/Resources.Inputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/original.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/original.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/original.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/original.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/original.ref.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/original.ref.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/references" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/references" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/resources" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/Avalonia/resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/ref/AnimeX.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/ref/AnimeX.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/refint/AnimeX.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/refint/AnimeX.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml" root0="FORCE_HIGHLIGHTING" />
@@ -31,6 +89,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -79,6 +139,8 @@
       <workItem from="1709420910276" duration="2365000" />
       <workItem from="1709483330842" duration="13028000" />
       <workItem from="1709497457366" duration="8845000" />
+      <workItem from="1709511385800" duration="21371000" />
+      <workItem from="1709533597969" duration="1398000" />
     </task>
     <servers />
   </component>

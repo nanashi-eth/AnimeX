@@ -1,3 +1,4 @@
+using AnimeX.Model;
 using AnimeX.ViewModel;
 using AnimeX.View;
 using Avalonia;
@@ -17,8 +18,10 @@ public partial class App : Application
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                // Creamos una instancia de RegistroAnime
+                var registroAnime = new RegistroAnime();
                 // Creamos una instancia de MainWindowViewModel
-                var mainWindowViewModel = new MainWindowViewModel();
+                var mainWindowViewModel = new MainWindowViewModel(registroAnime);
 
                 // Creamos una instancia de MainWindow y configuramos su DataContext con la instancia de MainWindowViewModel
                 var mainWindow = new MainWindowView()

@@ -2,22 +2,30 @@
 using System.ComponentModel;
 using ReactiveUI;
 using System.Threading.Tasks;
+using AnimeX.Model;
 
 namespace AnimeX.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
         private SplashScreenViewModel _splashScreenViewModel;
+        private CreateAnimeViewModel _createAnimeViewModel;
         private ReactiveObject _content;
+        private readonly RegistroAnime _registroAnime;
+        private AnimeDetailsViewModel _animeDetailsViewModel;
+
         public ReactiveObject Content
         {
             get => _content;
             set => this.RaiseAndSetIfChanged(ref _content, value);
         }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(RegistroAnime registroAnime)
         {
+            _registroAnime = registroAnime;
             _splashScreenViewModel = new SplashScreenViewModel();
+            _createAnimeViewModel = new CreateAnimeViewModel(registroAnime: _registroAnime);
+            _animeDetailsViewModel = new AnimeDetailsViewModel(_registroAnime);
             Content = _splashScreenViewModel;
         }
 
@@ -46,7 +54,7 @@ namespace AnimeX.ViewModel
                 _splashScreenViewModel.StartupMessage = "Ocultando Spoilers...";
                 await Task.Delay(2000);
                 // Después de que se haya cargado el contenido inicial, cambia al CreateAnimeViewModel
-                Content = new CreateAnimeViewModel();
+                Content = _animeDetailsViewModel;
             }
             catch (Exception ex)
             {

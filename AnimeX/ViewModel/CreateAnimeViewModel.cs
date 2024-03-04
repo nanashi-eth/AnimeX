@@ -1,36 +1,59 @@
 ﻿using ReactiveUI;
 using System;
+using System.IO;
 using System.Reactive;
-using System.Reactive.Subjects;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using AnimeX.Model;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 namespace AnimeX.ViewModel
 {
     public class CreateAnimeViewModel : ViewModelBase
     {
-        private char _tipo;
         private string _titulo;
-        private int _anyo;
         private string _generos;
         private double _nota;
-        private string _contenido;
+        private string _sinopsis;
         private bool _recomendado;
+        private Bitmap? _imagen;
+        private DateTime _anyo;
+        private int _tipoIndex;
 
-        public char Tipo
+        public int TipoIndex
         {
-            get => _tipo;
-            set => this.RaiseAndSetIfChanged(ref _tipo, value);
+            get => _tipoIndex;
+            set => this.RaiseAndSetIfChanged(ref _tipoIndex, value);
         }
+
+        public DateTime Anyo
+        {
+            get { return _anyo; }
+            set
+            {
+                if (_anyo != value)
+                {
+                    _anyo = value;
+                }
+            }
+        }
+
+        public Bitmap? Imagen
+        {
+            get => _imagen;
+            set => this.RaiseAndSetIfChanged(ref _imagen, value);
+        }
+        
+        public ReactiveCommand<Unit, Unit> AgregarImagenCommand { get; }
 
         public string Titulo
         {
             get => _titulo;
             set => this.RaiseAndSetIfChanged(ref _titulo, value);
-        }
-
-        public int Anyo
-        {
-            get => _anyo;
-            set => this.RaiseAndSetIfChanged(ref _anyo, value);
         }
 
         public string Generos
@@ -47,8 +70,8 @@ namespace AnimeX.ViewModel
 
         public string Contenido
         {
-            get => _contenido;
-            set => this.RaiseAndSetIfChanged(ref _contenido, value);
+            get => _sinopsis;
+            set => this.RaiseAndSetIfChanged(ref _sinopsis, value);
         }
 
         public bool Recomendado
@@ -58,32 +81,112 @@ namespace AnimeX.ViewModel
         }
 
         // Comando para guardar el anime
-        public ReactiveCommand<Unit, Unit> GuardarAnimeCommand { get; }
+        public ICommand GuardarAnimeCommand { get; }
 
-        // Observable para notificar cuando se guarda un anime
-        public IObservable<Unit> AnimeGuardado => _animeGuardado;
-        private readonly Subject<Unit> _animeGuardado = new Subject<Unit>();
+        private readonly RegistroAnime _registroAnime;
 
-        public CreateAnimeViewModel()
+        // Constructor que recibe una instancia de RegistroAnime
+        public CreateAnimeViewModel(RegistroAnime registroAnime)
         {
-            GuardarAnimeCommand = ReactiveCommand.Create(DoGuardarAnime);
+            _registroAnime = registroAnime;
+            GuardarAnimeCommand = ReactiveCommand.CreateFromTask(DoGuardarAnime);
+            AgregarImagenCommand = ReactiveCommand.CreateFromTask(DoAgregarImagen);
+            Imagen = new Bitmap(AssetLoader.Open(new Uri("avares://AnimeX/Assets/loading.png")));
+            Anyo = new DateTime(1999, 10, 20);
         }
-
-        private void DoGuardarAnime()
+        
+        private async Task DoAgregarImagen()
         {
             try
             {
-                // Aquí podrías llamar a un método en tu servicio o repositorio para guardar el anime en tu sistema de almacenamiento (por ejemplo, base de datos, archivo, etc.)
-                // Por simplicidad, simplemente lo imprimimos en la consola en este ejemplo
-                Console.WriteLine(
-                    $"Anime guardado: Tipo={Tipo}, Título={Titulo}, Año={Anyo}, Géneros={Generos}, Nota={Nota}, Contenido={Contenido}, Recomendado={Recomendado}");
+                var dlg = new OpenFileDialog();
+                dlg.Filters!.Add(new FileDialogFilter() { Name = "Imágenes", Extensions = { "jpg", "png", "jpeg", "gif" } });
+                dlg.AllowMultiple = false;
 
+                var result = await dlg.ShowAsync(((IClassicDesktopStyleApplicationLifetime)Application.Current.ApplicationLifetime).MainWindow);
+                if (result != null && result.Length > 0)
+                {
+                    // Leer la imagen desde el archivo seleccionado
+                    using (var stream = File.OpenRead(result[0]))
+                    {
+                        var bitmap = new Bitmap(stream);
+                        // Asignar la imagen al ViewModel
+                        Imagen = bitmap;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error que pueda ocurrir durante la selección de la imagen
+                Console.WriteLine($"Error al agregar la imagen: {ex.Message}");
+            }
+        }
 
+        private async Task DoGuardarAnime()
+        {
+            try
+            {
+                // Convertir el Bitmap a un arreglo de bytes
+                if (Imagen == null)
+                {
+                    // Si la imagen es nula, maneja el caso según sea necesario
+                    Console.WriteLine("La imagen es nula.");
+                    return;
+                }
+
+                // Convertir el Bitmap a un array de bytes
+                byte[] imagenBytes = ConvertirBitmapABytes(Imagen);
+                // Crear un nuevo objeto Anime con los datos del ViewModel
+                Anime nuevoAnime = new Anime
+                {
+                    Tipo = 'A',
+                    Titulo = Titulo,
+                    AnyoTicks = Anyo.ToBinary(),
+                    Generos = Generos,
+                    Nota = Nota,
+                    Contenido = Contenido,
+                    Recomendado = Recomendado,
+                    Imagen = imagenBytes
+                };
+
+                // Agregar el nuevo anime a la lista de registros
+                _registroAnime.AgregarAnime(nuevoAnime);
+
+                // Resetear los campos después de agregar el anime
+                LimpiarCampos();
+
+                // Asegúrate de que la actualización de la interfaz de usuario se realice en el hilo principal
+                Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
+                {
+                    _registroAnime.PrintAllAnime();
+                });
             }
             catch (Exception ex)
             {
                 // Manejar cualquier error que pueda ocurrir durante el proceso de guardado
                 Console.WriteLine($"Error al guardar el anime: {ex.Message}");
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            // Restablecer los valores de los campos a valores predeterminados
+            Titulo = "";
+            Generos = "";
+            Nota = 0;
+            Contenido = "";
+            Recomendado = false;
+            Imagen = new Bitmap(AssetLoader.Open(new Uri("avares://AnimeX/Assets/loading.png")));
+            Anyo = new DateTime(1999, 10, 20);
+        }
+        
+
+        private byte[] ConvertirBitmapABytes(Bitmap bitmap)
+        {
+            using (var ms = new MemoryStream())
+            {
+                bitmap.Save(ms);
+                return ms.ToArray();
             }
         }
     }

@@ -1,9 +1,9 @@
-﻿namespace AnimeX;
+﻿
+namespace AnimeX;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using ViewModel;
 using System;
-
     public class ViewLocator : IDataTemplate
     {
         public Control Build(object? data)

@@ -7,35 +7,70 @@
              x:Class="AnimeX.View.CreateAnimeView"
              x:CompileBindings="True"
              x:DataType="viewModel:CreateAnimeViewModel">
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,5,0,5" />
+            <Setter Property="FontFamily" Value="{StaticResource Poppins}" />
+        </Style>
+    </UserControl.Styles>
     <Design.DataContext>
         <viewModel:CreateAnimeViewModel/>
     </Design.DataContext>
-    <StackPanel>
-        <TextBlock Text="Tipo de anime (P, S, D):" />
-        <TextBox Text="{Binding Tipo}" />
+    <Grid>
+        <!-- Espacio vacío en la parte superior -->
+        <StackPanel Margin="0,20,0,0"/>
 
-        <TextBlock Text="Título:" />
-        <TextBox Text="{Binding Titulo}" />
+        <!-- División de la ventana en dos columnas -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Año:" />
-        <TextBox Text="{Binding Anyo}" />
+        <!-- Mitad izquierda: formulario para agregar un nuevo anime -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Tipo de anime (P, S, D):" />
+            <ComboBox SelectedIndex="{Binding TipoIndex}">
+                <ComboBoxItem Content="P" />
+                <ComboBoxItem Content="S" />
+                <ComboBoxItem Content="D" />
+            </ComboBox>
 
-        <TextBlock Text="Géneros:" />
-        <TextBox Text="{Binding Generos}" />
+            <TextBlock Text="Título:" />
+            <TextBox Text="{Binding Titulo}" />
 
-        <TextBlock Text="Nota:" />
-        <TextBox Text="{Binding Nota}" />
+            <TextBlock Text="Año:" />
+            <CalendarDatePicker  SelectedDate="{Binding Anyo, Mode=TwoWay}" />
 
-        <TextBlock Text="Contenido:" />
-        <TextBox Text="{Binding Contenido}" />
+            <TextBlock Text="Géneros:" />
+            <TextBox Text="{Binding Generos}" />
 
-        <TextBlock Text="Recomendado:" />
-        <CheckBox IsChecked="{Binding Recomendado}" />
+            <!-- Utilizando un rating bar en lugar del campo de texto para la nota -->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Nota:" />
+                <TextBlock Text="{Binding Nota, StringFormat={}{0:0.0}}" FontWeight="Bold" Margin="5,0,0,0" />
+            </StackPanel>
+            <Slider Minimum="0" Maximum="10" Value="{Binding Nota}" TickFrequency="0.5" IsSnapToTickEnabled="True" />
+            
+            <TextBlock Text="Sinopsis:" />
+            <TextBox Text="{Binding Contenido}" />
 
-        <!-- Agrega más controles según sea necesario para otros campos -->
+            <TextBlock Text="Recomendado:" />
+            <CheckBox IsChecked="{Binding Recomendado}" />
 
-        <!-- Botón para guardar el anime -->
-        <Button Content="Guardar Anime" Command="{Binding GuardarAnimeCommand}" />
-    </StackPanel>
+            <!-- Botón para guardar el anime -->
+            <Button Content="Guardar Anime" Command="{Binding GuardarAnimeCommand}" HorizontalAlignment="Stretch" />
+        </StackPanel>
+
+        <!-- Mitad derecha: imagen -->
+        <StackPanel Grid.Column="1" Margin="10" Orientation="Horizontal">
+            <Button Width="40" Height="40" Command="{Binding AgregarImagenCommand}" >
+                <Path Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Height="24" Data="{DynamicResource ImageRegular}" Fill="White"/>
+            </Button>
+            <StackPanel>
+                <TextBlock Text="Cover" HorizontalAlignment="Center" />
+                <Image Source="{Binding Imagen}" Width="300" Height="400" Stretch="Uniform" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
 </UserControl>
-
