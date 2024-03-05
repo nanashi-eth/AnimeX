@@ -1,0 +1,29 @@
+﻿<!-- MessageBox.axaml -->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
+        x:Class="AnimeX.View.MessageBox"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaTitleBarHeightHint="30"
+        FontFamily="Source Sans Pro"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight" CanResize="False">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource WindowBackground}">
+        <StackPanel Orientation="Horizontal" Margin="10 30 10 10">
+            <materialIcons:MaterialIcon x:Name="Icon" Margin="0 0 5 0"/>
+            <TextBlock HorizontalAlignment="Center" Name="Text" Margin="0 0 5 0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons" Margin="10 10 10 0">
+            <StackPanel.Styles>
+                <Style Selector="Button">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+            </StackPanel.Styles>
+        </StackPanel>
+    </StackPanel>
+</Window>

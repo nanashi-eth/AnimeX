@@ -4,7 +4,6 @@ using System.Reactive;
 using AnimeX.Model;
 using Avalonia.Media.Imaging;
 using System.IO;
-using System.Reactive.Linq;
 
 namespace AnimeX.ViewModel
 {
@@ -52,20 +51,32 @@ namespace AnimeX.ViewModel
 
         public ReactiveCommand<Unit, Unit> GoToPreviousAnimeCommand { get; }
         public ReactiveCommand<Unit, Unit> GoToNextAnimeCommand { get; }
+        public ReactiveCommand<Unit, Unit> DeleteCurrentAnimeCommand { get; }
 
-        private readonly RegistroAnime _registroAnime;
+        private RegistroAnime _registroAnime;
 
-        public AnimeDetailsViewModel(RegistroAnime registroAnime)
+        public AnimeDetailsViewModel(ref RegistroAnime registroAnime)
         {
             _registroAnime = registroAnime;
             GoToPreviousAnimeCommand = ReactiveCommand.Create(DoGoToPreviousAnime);
             GoToNextAnimeCommand = ReactiveCommand.Create(DoGoToNextAnime);
+            DeleteCurrentAnimeCommand = ReactiveCommand.Create(DoDeleteCurrentAnime);
 
-            CurrentIndex = 0;
-            TotalAnimes = _registroAnime.Lista.Count;
-
-            if (TotalAnimes > 0)
+            // Verificar si hay animes en la lista
+            if (_registroAnime.Lista.Count > 0)
+            {
+                CurrentIndex = 0;
+                TotalAnimes = _registroAnime.Lista.Count;
                 CurrentAnime = _registroAnime.Lista[CurrentIndex];
+            }
+            else
+            {
+                // Cargar valores predeterminados en caso de que no haya animes
+                CurrentIndex = -1;
+                TotalAnimes = 0;
+                CurrentAnime = new Anime(); // O cualquier otro valor predeterminado que desees
+            }
+    
             UpdateCurrentAnimeProperties();
         }
 
@@ -116,11 +127,20 @@ namespace AnimeX.ViewModel
         // Método para actualizar las propiedades del anime actual en la vista
         private void UpdateCurrentAnimeProperties()
         {
-            CurrentAnimeInfo = $"{CurrentAnime.Titulo}'"; // Actualizar el título en la vista
-            // Convertir el año de binario a DateTime y formatearlo como año
-            AnyoFormatted = DateTime.FromBinary(CurrentAnime.AnyoTicks).ToString("MM/dd/yyyy");
-            // Convertir el array de bytes de la imagen a un objeto Bitmap
-            ImagenBitmap = ConvertByteArrayToBitmap(CurrentAnime.Imagen);
+            if (CurrentAnime != null)
+            {
+                CurrentAnimeInfo = $"{CurrentAnime.Titulo}'"; // Actualizar el título en la vista
+                // Convertir el año de binario a DateTime y formatearlo como año
+                AnyoFormatted = DateTime.FromBinary(CurrentAnime.AnyoTicks).ToString("MM/dd/yyyy");
+                // Convertir el array de bytes de la imagen a un objeto Bitmap
+                ImagenBitmap = ConvertByteArrayToBitmap(CurrentAnime.Imagen);
+            }
+            else
+            {
+                CurrentAnimeInfo = " "; 
+                AnyoFormatted = " ";
+                ImagenBitmap = new Bitmap("Assets/loading.png");
+            }
         }
 
         private Bitmap _imagenBitmap;
@@ -155,10 +175,30 @@ namespace AnimeX.ViewModel
             {
                 ms.Position = 0;
 
-                bitmap = new Avalonia.Media.Imaging.Bitmap(ms);
+                bitmap = new Bitmap(ms);
             }
 
             return bitmap;
+        }
+        private void DoDeleteCurrentAnime()
+        {
+            try
+            {
+                // Eliminar el anime actual de la lista
+                _registroAnime.EliminarAnime(CurrentIndex);
+                
+                // Actualizar el índice y total de animes
+                TotalAnimes = _registroAnime.Lista.Count;
+                CurrentIndex = Math.Min(CurrentIndex, TotalAnimes - 1);
+                
+                // Actualizar las propiedades del anime actual
+                CurrentAnime = TotalAnimes > 0 ? _registroAnime.Lista[CurrentIndex] : null;
+                UpdateCurrentAnimeProperties();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar el anime: {ex.Message}");
+            }
         }
     }
 }

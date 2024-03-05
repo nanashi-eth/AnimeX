@@ -11,6 +11,7 @@
         <entry key="AnimeX/View/CreateAnimeView.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/MainWindow.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/MainWindowView.axaml" value="AnimeX/AnimeX.csproj" />
+        <entry key="AnimeX/View/MessageBox.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/SplashScreen.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/View/SplashScreenView.axaml" value="AnimeX/AnimeX.csproj" />
         <entry key="AnimeX/Views/CreateAnime.axaml" value="AnimeX/AnimeX.csproj" />

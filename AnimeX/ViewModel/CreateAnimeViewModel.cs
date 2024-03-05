@@ -83,7 +83,7 @@ namespace AnimeX.ViewModel
         // Comando para guardar el anime
         public ICommand GuardarAnimeCommand { get; }
 
-        private readonly RegistroAnime _registroAnime;
+        private RegistroAnime _registroAnime;
 
         // Constructor que recibe una instancia de RegistroAnime
         public CreateAnimeViewModel(RegistroAnime registroAnime)

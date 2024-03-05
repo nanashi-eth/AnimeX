@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace AnimeX.Model
 {
@@ -9,9 +10,22 @@ namespace AnimeX.Model
         private const string NOMBRE_FICHERO = "databank.data";
         private ObservableCollection<Anime> lista;
 
+        public ObservableCollection<Anime> Lista
+        {
+            get => lista;
+            private set
+            {
+                lista = value;
+                // Notificar a los suscriptores que la propiedad ha cambiado
+                ListaChanged?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        public event EventHandler ListaChanged;
+
         public RegistroAnime()
         {
-            lista = new ObservableCollection<Anime>();
+            Lista = new ObservableCollection<Anime>();
             CargarRegistros();
         }
         
@@ -24,34 +38,38 @@ namespace AnimeX.Model
             }
         }
 
-        public ObservableCollection<Anime> Lista => lista;
-
         public void AgregarAnime(Anime anime)
         {
-            lista.Add(anime);
-            GuardarRegistros(); // Guardar el registro inmediatamente después de agregar uno nuevo.
+            Lista.Add(anime);// Guardar el registro inmediatamente después de agregar uno nuevo.
+            GuardarRegistros();
         }
 
         public void EliminarAnime(int indice)
         {
-            if (indice >= 0 && indice < lista.Count)
+            if (indice >= 0 && indice < Lista.Count)
             {
-                lista.RemoveAt(indice);
-                GuardarRegistros(); // Guardar el registro después de eliminar uno.
+                Lista.RemoveAt(indice);
+                Console.WriteLine(Lista.Count);
             }
             else
             {
                 throw new IndexOutOfRangeException("Índice de reseña fuera de rango.");
             }
+            foreach (Anime anime in Lista)
+            {
+                Console.WriteLine(anime.Titulo);
+            }
+            Console.WriteLine("hola");
+            GuardarRegistros();
         }
 
-        private void GuardarRegistros()
+        public void GuardarRegistros()
         {
             try
             {
                 using (BinaryWriter bw = new BinaryWriter(File.OpenWrite(NOMBRE_FICHERO)))
                 {
-                    foreach (Anime anime in lista)
+                    foreach (Anime anime in Lista)
                     {
                         anime.GuardarAnime(bw);
                     }
@@ -73,7 +91,7 @@ namespace AnimeX.Model
                     {
                         while (br.PeekChar() != -1)
                         {
-                            lista.Add(Anime.CargarAnime(br));
+                            Lista.Add(Anime.CargarAnime(br));
                         }
                     }
                 }

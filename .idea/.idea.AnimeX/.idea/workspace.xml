@@ -8,24 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0629eb32-7988-431a-b490-90216062df91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AnimeX/Converters/HoverToBorderThicknessConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AnimeX/Converters/IndexTotalConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeX/View/MessageBox.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnimeX/View/MessageBox.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnimeX/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/AnimeX.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/AnimeX.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/App.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/Converters/HoverToBorderThicknessConverter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/Model/RegistroAnime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/Model/RegistroAnime.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/View/MainWindowView.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/ViewModel/AnimeDetailsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/ViewModel/AnimeDetailsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnimeX/ViewModel/CreateAnimeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/ViewModel/CreateAnimeViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AnimeX/ViewModel/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/ViewModel/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/AnimeX.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/Debug/net7.0/AnimeX.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AnimeX/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnimeX/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/AnimeX/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -106,7 +101,13 @@
       <workItem from="1709497457366" duration="8845000" />
       <workItem from="1709511385800" duration="21371000" />
       <workItem from="1709533597969" duration="1722000" />
-      <workItem from="1709589503439" duration="6555000" />
+      <workItem from="1709589503439" duration="6594000" />
+      <workItem from="1709629714161" duration="114000" />
+      <workItem from="1709644464631" duration="132000" />
+      <workItem from="1709655893054" duration="2520000" />
+      <workItem from="1709658743414" duration="4043000" />
+      <workItem from="1709663050020" duration="1323000" />
+      <workItem from="1709680107095" duration="1972000" />
     </task>
     <task id="LOCAL-00001" summary="Jumm">
       <option name="closed" value="true" />
@@ -116,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709535168620</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="View improving">
+      <option name="closed" value="true" />
+      <created>1709596198808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709596198808</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Jumm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jumm" />
+    <MESSAGE value="View improving" />
+    <option name="LAST_COMMIT_MESSAGE" value="View improving" />
   </component>
 </project>

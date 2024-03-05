@@ -1,4 +1,5 @@
-
+using System;
+using AnimeX.ViewModel;
 using Avalonia.Controls;
 
 namespace AnimeX.View
@@ -11,4 +12,3 @@ namespace AnimeX.View
         }
     }
 }
-

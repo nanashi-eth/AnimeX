@@ -23,7 +23,7 @@
     <Canvas>
         <!-- TransitioningContentControl -->
         <TransitioningContentControl Canvas.Left="0" Canvas.Top="0" Width="800" Height="550" Content="{Binding Content}" />
-        <Border Canvas.Left="310" Canvas.Bottom="20" Background="Plum" Opacity="0.2" ZIndex="-100" Width="180" CornerRadius="10" BorderBrush="White" BorderThickness="2" IsVisible="{Binding IsAppLoaded}">
+        <Border Canvas.Left="310" Canvas.Bottom="45" Background="Plum" Opacity="0.2" ZIndex="-100" Width="180" CornerRadius="10" BorderBrush="White" BorderThickness="2" IsVisible="{Binding IsAppLoaded}">
         <!-- Panel de botones flotantes en la parte inferior central -->
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
@@ -34,13 +34,13 @@
                 </Style>
             </StackPanel.Styles>
             <!-- Aquí puedes colocar tus botones flotantes -->
-            <Button Margin="5" >
+            <Button Margin="5" Command="{Binding ChangeToNewAnimeViewCommand}">
                 <StackPanel Orientation="Horizontal">
                     <materialIcons:MaterialIcon Kind="PlusBold" Width="20" Height="20" Margin="0 0 5 0"/>
                     <TextBlock Text="New" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Margin="5">
+            <Button Margin="5" Command="{Binding ChangeToListAnimeViewCommand}">
                 <StackPanel Orientation="Horizontal" >
                     <materialIcons:MaterialIcon Kind="ListBox" Width="20" Height="20" Margin="0 0 5 0"/>
                     <TextBlock Text="Lista" VerticalAlignment="Center"/>
