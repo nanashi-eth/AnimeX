@@ -2,6 +2,8 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Runtime.InteropServices;
+using AnimeX.View;
+using Material.Icons;
 
 namespace AnimeX.Model
 {
@@ -49,7 +51,6 @@ namespace AnimeX.Model
             if (indice >= 0 && indice < Lista.Count)
             {
                 Lista.RemoveAt(indice);
-                Console.WriteLine(Lista.Count);
             }
             else
             {
@@ -59,7 +60,6 @@ namespace AnimeX.Model
             {
                 Console.WriteLine(anime.Titulo);
             }
-            Console.WriteLine("hola");
             GuardarRegistros();
         }
 
@@ -67,6 +67,13 @@ namespace AnimeX.Model
         {
             try
             {
+                if (Lista.Count == 0)
+                {
+                    if (File.Exists(NOMBRE_FICHERO))
+                    {
+                        File.Delete(NOMBRE_FICHERO);
+                    }
+                }
                 using (BinaryWriter bw = new BinaryWriter(File.OpenWrite(NOMBRE_FICHERO)))
                 {
                     foreach (Anime anime in Lista)
@@ -77,7 +84,7 @@ namespace AnimeX.Model
             }
             catch (IOException ex)
             {
-                Console.WriteLine($"Error al guardar registros: {ex.Message}");
+                MessageBox.Show(null, "Error al guardar registros", "Error", MaterialIconKind.Error);
             }
         }
 
@@ -97,7 +104,7 @@ namespace AnimeX.Model
                 }
                 catch (IOException ex)
                 {
-                    Console.WriteLine($"Error al cargar registros: {ex.Message}");
+                    MessageBox.Show(null, "Error al cargar registros", "Error", MaterialIconKind.Error);
                 }
             }
         }

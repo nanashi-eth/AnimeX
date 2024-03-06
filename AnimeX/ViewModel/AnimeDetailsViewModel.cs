@@ -4,6 +4,8 @@ using System.Reactive;
 using AnimeX.Model;
 using Avalonia.Media.Imaging;
 using System.IO;
+using AnimeX.View;
+using Material.Icons;
 
 namespace AnimeX.ViewModel
 {
@@ -74,7 +76,7 @@ namespace AnimeX.ViewModel
                 // Cargar valores predeterminados en caso de que no haya animes
                 CurrentIndex = -1;
                 TotalAnimes = 0;
-                CurrentAnime = new Anime(); // O cualquier otro valor predeterminado que desees
+                CurrentAnime = new Anime();
             }
     
             UpdateCurrentAnimeProperties();
@@ -88,7 +90,6 @@ namespace AnimeX.ViewModel
             set
             {
                 this.RaiseAndSetIfChanged(ref _next, value);
-                Console.WriteLine(_next);
             }
         }
 
@@ -100,7 +101,6 @@ namespace AnimeX.ViewModel
             set
             {
                 this.RaiseAndSetIfChanged(ref _prev, value);
-                Console.WriteLine(_prev);
             }
         }
 
@@ -110,7 +110,7 @@ namespace AnimeX.ViewModel
             {
                 CurrentIndex--;
                 CurrentAnime = _registroAnime.Lista[CurrentIndex];
-                UpdateCurrentAnimeProperties(); // Actualizar propiedades después de cambiar de anime
+                UpdateCurrentAnimeProperties(); 
             }
         }
 
@@ -120,7 +120,7 @@ namespace AnimeX.ViewModel
             {
                 CurrentIndex++;
                 CurrentAnime = _registroAnime.Lista[CurrentIndex];
-                UpdateCurrentAnimeProperties(); // Actualizar propiedades después de cambiar de anime
+                UpdateCurrentAnimeProperties(); 
             }
         }
 
@@ -194,10 +194,11 @@ namespace AnimeX.ViewModel
                 // Actualizar las propiedades del anime actual
                 CurrentAnime = TotalAnimes > 0 ? _registroAnime.Lista[CurrentIndex] : null;
                 UpdateCurrentAnimeProperties();
+                MessageBox.Show(null, "Anime borrado correctamente", "Info", MaterialIconKind.Info);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al eliminar el anime: {ex.Message}");
+                MessageBox.Show(null, "Error al eliminar el anime", "Error", MaterialIconKind.Error);
             }
         }
     }

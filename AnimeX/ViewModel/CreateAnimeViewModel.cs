@@ -5,11 +5,13 @@ using System.Reactive;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AnimeX.Model;
+using AnimeX.View;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Material.Icons;
 
 namespace AnimeX.ViewModel
 {
@@ -114,11 +116,12 @@ namespace AnimeX.ViewModel
                         Imagen = bitmap;
                     }
                 }
+                MessageBox.Show(null, "La imagen se cargo correctamente", "Info", MaterialIconKind.Info);
             }
             catch (Exception ex)
             {
                 // Manejar cualquier error que pueda ocurrir durante la selección de la imagen
-                Console.WriteLine($"Error al agregar la imagen: {ex.Message}");
+                MessageBox.Show(null, "No se ha podido cargar la imagen", "Error", MaterialIconKind.Error);
             }
         }
 
@@ -130,12 +133,13 @@ namespace AnimeX.ViewModel
                 if (Imagen == null)
                 {
                     // Si la imagen es nula, maneja el caso según sea necesario
-                    Console.WriteLine("La imagen es nula.");
+                    MessageBox.Show(null, "Error la imagen no puede ser nula", "Error", MaterialIconKind.Error);
                     return;
                 }
 
                 // Convertir el Bitmap a un array de bytes
                 byte[] imagenBytes = ConvertirBitmapABytes(Imagen);
+                
                 // Crear un nuevo objeto Anime con los datos del ViewModel
                 Anime nuevoAnime = new Anime
                 {
@@ -160,6 +164,7 @@ namespace AnimeX.ViewModel
                 {
                     _registroAnime.PrintAllAnime();
                 });
+                MessageBox.Show(null, "Anime guardado correctamente", "Info", MaterialIconKind.Error);
             }
             catch (Exception ex)
             {
